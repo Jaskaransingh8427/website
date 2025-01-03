@@ -26,6 +26,28 @@
     button:hover {
       transform: scale(1.05);
     }
+    .modal {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 50;
+      background: #1f2937;
+      border-radius: 10px;
+      padding: 20px;
+      color: #fff;
+      display: none;
+    }
+    .overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+      z-index: 40;
+      display: none;
+    }
   </style>
 </head>
 <body class="flex justify-center items-center min-h-screen">
@@ -84,7 +106,46 @@
           Reset
         </button>
       </div>
+
+      <!-- New Buttons -->
+      <div class="flex gap-4 mt-6">
+        <button
+          id="aboutDeveloperBtn"
+          class="flex-1 bg-green-600 text-white py-3 rounded-lg font-semibold transition"
+        >
+          About Developer
+        </button>
+        <button
+          id="contactEmailBtn"
+          class="flex-1 bg-blue-800 text-white py-3 rounded-lg font-semibold transition"
+          onclick="location.href='mailto:developer@example.com';"
+        >
+          Contact Email
+        </button>
+        <button
+          id="contactWhatsAppBtn"
+          class="flex-1 bg-green-800 text-white py-3 rounded-lg font-semibold transition"
+          onclick="location.href='https://wa.me/1234567890';"
+        >
+          Contact on WhatsApp
+        </button>
+      </div>
     </div>
+  </div>
+
+  <!-- Modal and Overlay -->
+  <div class="overlay" id="overlay"></div>
+  <div class="modal" id="modal">
+    <h2 class="text-xl font-bold mb-4">About Developer</h2>
+    <p class="text-gray-300 mb-4">
+      Hi! I'm John Doe, a passionate web developer specializing in interactive tools and user-friendly applications.
+    </p>
+    <button
+      id="closeModalBtn"
+      class="bg-red-600 text-white py-2 px-4 rounded-lg font-semibold"
+    >
+      Close
+    </button>
   </div>
 
   <script src="app.js"></script>
