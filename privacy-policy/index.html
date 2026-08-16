@@ -1,0 +1,852 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Privacy Policy — Auto Lingual TTS</title>
+<meta name="description" content="Official Privacy Policy for the Auto Lingual TTS Android application (text-to-speech engine) by Code Galaxy Software Solutions, including its use with e-book readers, screen readers, and accessibility services such as Google TalkBack.">
+<meta name="robots" content="index, follow">
+<style>
+  /* ========================================================================
+     DESIGN TOKENS
+     ======================================================================== */
+  :root{
+    --ink-900: #0F1720;
+    --ink-700: #2B3648;
+    --ink-500: #5B6472;
+    --ink-300: #8A93A3;
+    --line: #E4E8EF;
+    --line-soft: #EEF1F6;
+    --paper: #FFFFFF;
+    --bg: #F6F8FB;
+    --accent: #2E5BFF;
+    --accent-ink: #16326B;
+    --accent-soft: #EEF2FF;
+    --accent-soft-line: #D6E0FF;
+    --good: #0F9D68;
+    --good-soft: #E9FBF3;
+    --good-line: #BCEDD8;
+    --warn: #B45309;
+    --warn-soft: #FFF7ED;
+    --warn-line: #FBD9AE;
+    --violet: #7C3AED;
+    --violet-soft: #F3EEFF;
+    --violet-line: #DDD0FC;
+    --radius-md: 10px;
+    --radius-lg: 16px;
+    --shadow-sm: 0 1px 2px rgba(15,23,32,0.06);
+    --shadow-md: 0 8px 30px rgba(15,23,32,0.08);
+    --font-body: 'Source Serif Pro', Georgia, 'Times New Roman', serif;
+    --font-ui: -apple-system, BlinkMacSystemFont, 'Segoe UI', Inter, Roboto, Helvetica, Arial, sans-serif;
+    --font-mono: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;
+  }
+
+  /* ========================================================================
+     RESET + BASE
+     ======================================================================== */
+  *, *::before, *::after{ box-sizing: border-box; }
+  html{ scroll-behavior: smooth; }
+  body{
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink-900);
+    font-family: var(--font-body);
+    font-size: 17px;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+  }
+  img{ max-width: 100%; }
+  a{ color: var(--accent); text-decoration: none; }
+  a:hover{ text-decoration: underline; }
+  ::selection{ background: var(--accent-soft-line); }
+
+  h1, h2, h3, h4{
+    font-family: var(--font-ui);
+    color: var(--ink-900);
+    line-height: 1.25;
+    letter-spacing: -0.01em;
+    font-weight: 700;
+  }
+
+  /* ========================================================================
+     LAYOUT
+     ======================================================================== */
+  .shell{
+    max-width: 1180px;
+    margin-inline: auto;
+    padding: 0 24px;
+  }
+
+  .topbar{
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background: rgba(255,255,255,0.88);
+    backdrop-filter: blur(10px) saturate(140%);
+    -webkit-backdrop-filter: blur(10px) saturate(140%);
+    border-bottom: 1px solid var(--line);
+  }
+  .topbar__inner{
+    max-width: 1180px;
+    margin-inline: auto;
+    padding: 14px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    font-family: var(--font-ui);
+  }
+  .brand{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 700;
+    font-size: 15px;
+    color: var(--ink-900);
+  }
+  .brand__mark{
+    width: 26px; height: 26px; flex-shrink: 0;
+  }
+  .topbar__meta{
+    font-size: 13px;
+    color: var(--ink-500);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .print-btn{
+    font-family: var(--font-ui);
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--ink-700);
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    padding: 7px 14px;
+    cursor: pointer;
+    transition: border-color .15s ease, color .15s ease;
+  }
+  .print-btn:hover{ border-color: var(--accent); color: var(--accent); }
+
+  .hero{
+    padding: 56px 0 36px;
+  }
+  .hero .eyebrow{
+    font-family: var(--font-ui);
+    font-size: 12.5px;
+    font-weight: 700;
+    letter-spacing: 0.09em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 14px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .hero .eyebrow::before{
+    content: '';
+    width: 7px; height: 7px;
+    border-radius: 50%;
+    background: var(--accent);
+  }
+  .hero h1{
+    font-size: clamp(2rem, 4.4vw, 2.9rem);
+    margin: 0 0 14px;
+  }
+  .hero p.lede{
+    font-family: var(--font-ui);
+    font-size: 16.5px;
+    color: var(--ink-500);
+    max-width: 72ch;
+    margin: 0 0 22px;
+  }
+  .hero__meta{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  .pill{
+    font-family: var(--font-ui);
+    font-size: 12.5px;
+    font-weight: 600;
+    padding: 6px 12px;
+    border-radius: 999px;
+    border: 1px solid var(--line);
+    background: var(--paper);
+    color: var(--ink-700);
+  }
+  .pill--accent{ background: var(--accent-soft); border-color: var(--accent-soft-line); color: var(--accent-ink); }
+  .pill--good{ background: var(--good-soft); border-color: var(--good-line); color: var(--good); }
+  .pill--violet{ background: var(--violet-soft); border-color: var(--violet-line); color: var(--violet); }
+
+  /* ---- Grid: TOC + content ---- */
+  .layout{
+    display: grid;
+    grid-template-columns: 260px minmax(0,1fr);
+    gap: 48px;
+    padding-bottom: 90px;
+    align-items: start;
+  }
+
+  .toc{
+    position: sticky;
+    top: 88px;
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: var(--radius-lg);
+    padding: 20px;
+    box-shadow: var(--shadow-sm);
+    font-family: var(--font-ui);
+  }
+  .toc h2{
+    font-size: 11.5px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--ink-300);
+    margin: 0 0 12px;
+  }
+  .toc ol{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    counter-reset: toc;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    max-height: 68vh;
+    overflow-y: auto;
+  }
+  .toc li{ counter-increment: toc; }
+  .toc a{
+    display: flex;
+    gap: 8px;
+    align-items: baseline;
+    font-size: 13.5px;
+    color: var(--ink-700);
+    padding: 7px 8px;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: background .15s ease, color .15s ease;
+  }
+  .toc a::before{
+    content: counter(toc, decimal-leading-zero);
+    font-family: var(--font-mono);
+    font-size: 11px;
+    color: var(--ink-300);
+    flex-shrink: 0;
+  }
+  .toc a:hover{ background: var(--accent-soft); color: var(--accent-ink); }
+
+  /* ========================================================================
+     DOCUMENT
+     ======================================================================== */
+  .doc{
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-md);
+    padding: 48px clamp(24px, 5vw, 64px) 60px;
+  }
+
+  .doc > section{
+    padding-top: 40px;
+    margin-top: 40px;
+    border-top: 1px solid var(--line-soft);
+    scroll-margin-top: 90px;
+  }
+  .doc > section:first-of-type{
+    padding-top: 0;
+    margin-top: 0;
+    border-top: none;
+  }
+
+  .doc h2{
+    font-size: 1.5rem;
+    display: flex;
+    align-items: baseline;
+    gap: 12px;
+    margin: 0 0 18px;
+  }
+  .doc h2 .num{
+    font-family: var(--font-mono);
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--accent);
+    flex-shrink: 0;
+  }
+  .doc h2 .hi{
+    font-family: var(--font-ui);
+    font-weight: 500;
+    font-size: 0.6em;
+    color: var(--ink-300);
+  }
+  .doc h3{
+    font-size: 1.08rem;
+    margin: 28px 0 10px;
+  }
+  .doc h4{
+    font-size: 0.98rem;
+    font-family: var(--font-ui);
+    color: var(--ink-700);
+    margin: 20px 0 6px;
+  }
+  .doc p{ margin: 0 0 14px; color: var(--ink-700); }
+  .doc p.small-note{ font-family: var(--font-ui); font-size: 14px; color: var(--ink-500); }
+  .doc ul, .doc ol{ margin: 0 0 16px; padding-left: 1.3em; color: var(--ink-700); }
+  .doc li{ margin-bottom: 7px; }
+  .doc li::marker{ color: var(--accent); }
+  .doc strong{ color: var(--ink-900); font-weight: 700; }
+  .doc a{ font-weight: 600; }
+
+  .callout{
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+    background: var(--good-soft);
+    border: 1px solid var(--good-line);
+    border-radius: var(--radius-md);
+    padding: 16px 18px;
+    margin: 18px 0;
+    font-family: var(--font-ui);
+    font-size: 14.5px;
+    color: #0B5A3B;
+  }
+  .callout__icon{
+    width: 20px; height: 20px; flex-shrink: 0; margin-top: 2px; color: var(--good);
+  }
+  .callout--warn{ background: var(--warn-soft); border-color: var(--warn-line); color: #7A3E06; }
+  .callout--warn .callout__icon{ color: var(--warn); }
+  .callout--info{ background: var(--accent-soft); border-color: var(--accent-soft-line); color: var(--accent-ink); }
+  .callout--info .callout__icon{ color: var(--accent); }
+  .callout--violet{ background: var(--violet-soft); border-color: var(--violet-line); color: #4C1D95; }
+  .callout--violet .callout__icon{ color: var(--violet); }
+  .callout p{ margin: 0; color: inherit; }
+  .callout strong{ color: inherit; }
+
+  .table-wrap{
+    overflow-x: auto;
+    margin: 18px 0;
+    border: 1px solid var(--line);
+    border-radius: var(--radius-md);
+  }
+  table{
+    width: 100%;
+    border-collapse: collapse;
+    font-family: var(--font-ui);
+    font-size: 14px;
+  }
+  thead th{
+    text-align: left;
+    background: var(--bg);
+    color: var(--ink-700);
+    font-weight: 700;
+    font-size: 12px;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    padding: 12px 16px;
+    border-bottom: 1px solid var(--line);
+  }
+  tbody td{
+    padding: 13px 16px;
+    border-bottom: 1px solid var(--line-soft);
+    color: var(--ink-700);
+    vertical-align: top;
+  }
+  tbody tr:last-child td{ border-bottom: none; }
+  tbody td:first-child{ font-weight: 600; color: var(--ink-900); white-space: nowrap; }
+  code{
+    font-family: var(--font-mono);
+    font-size: 0.86em;
+    background: var(--line-soft);
+    padding: 0.15em 0.4em;
+    border-radius: 4px;
+    color: var(--accent-ink);
+  }
+
+  .badge-row{ display: flex; flex-wrap: wrap; gap: 8px; margin: 4px 0 18px; }
+  .badge{
+    font-family: var(--font-ui);
+    font-size: 12px;
+    font-weight: 600;
+    padding: 5px 10px;
+    border-radius: 6px;
+    background: var(--bg);
+    border: 1px solid var(--line);
+    color: var(--ink-500);
+  }
+
+  .contact-card{
+    background: var(--bg);
+    border: 1px solid var(--line);
+    border-radius: var(--radius-md);
+    padding: 22px 24px;
+    font-family: var(--font-ui);
+  }
+  .contact-card dl{ display: grid; grid-template-columns: max-content 1fr; gap: 8px 20px; margin: 0; }
+  .contact-card dt{ font-size: 12.5px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: var(--ink-300); align-self: center; }
+  .contact-card dd{ margin: 0; font-size: 15px; color: var(--ink-900); align-self: center; }
+
+  .hindi{
+    font-family: 'Noto Sans Devanagari', 'Nirmala UI', var(--font-ui);
+  }
+
+  .rights-block{
+    background: var(--bg);
+    border: 1px solid var(--line);
+    border-radius: var(--radius-md);
+    padding: 20px 22px;
+    margin: 18px 0;
+    font-family: var(--font-ui);
+    font-size: 14.5px;
+    color: var(--ink-700);
+  }
+  .rights-block strong{ color: var(--ink-900); }
+
+  .doc-footer{
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 0 24px 80px;
+    font-family: var(--font-ui);
+    font-size: 13px;
+    color: var(--ink-300);
+    text-align: center;
+    line-height: 1.9;
+  }
+
+  /* ========================================================================
+     RESPONSIVE
+     ======================================================================== */
+  @media (max-width: 900px){
+    .layout{ grid-template-columns: 1fr; }
+    .toc{
+      position: static;
+      order: -1;
+    }
+    .toc ol{ max-height: none; }
+    .doc{ padding: 32px 22px 44px; }
+  }
+  @media (max-width: 560px){
+    body{ font-size: 16px; }
+    .hero{ padding: 40px 0 28px; }
+    .topbar__meta .print-btn{ display: none; }
+  }
+
+  /* ========================================================================
+     PRINT
+     ======================================================================== */
+  @media print{
+    body{ background: #fff; }
+    .topbar, .toc, .print-btn{ display: none !important; }
+    .layout{ display: block; padding-bottom: 0; }
+    .doc{ box-shadow: none; border: none; padding: 0; }
+    .doc > section{ break-inside: avoid; }
+    a{ color: inherit; text-decoration: underline; }
+  }
+</style>
+</head>
+<body>
+
+  <div class="topbar">
+    <div class="topbar__inner">
+      <div class="brand">
+        <svg class="brand__mark" viewBox="0 0 32 32" aria-hidden="true">
+          <defs><linearGradient id="mark" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0" stop-color="#2E5BFF"/><stop offset="1" stop-color="#7C3AED"/>
+          </linearGradient></defs>
+          <circle cx="16" cy="16" r="3.4" fill="url(#mark)"/>
+          <ellipse cx="16" cy="16" rx="12" ry="5.4" fill="none" stroke="url(#mark)" stroke-width="1.6" transform="rotate(-24 16 16)"/>
+        </svg>
+        Code Galaxy Software Solutions
+      </div>
+      <div class="topbar__meta">
+        <span>Auto Lingual TTS — Privacy Policy</span>
+        <button class="print-btn" onclick="window.print()" type="button">Print / Save PDF</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="shell">
+    <div class="hero">
+      <div class="eyebrow">Legal · Privacy · Final Published Version</div>
+      <h1>Privacy Policy for Auto Lingual TTS</h1>
+      <p class="lede">Auto Lingual TTS is a text-to-speech (TTS) engine for Android. It is designed to be selected as the active voice engine by other applications on your device — including e-book and PDF readers, document and notification readers, and accessibility services such as Google TalkBack, Select to Speak, and other screen readers — and to route the text it receives from those apps to the appropriate on-device voice automatically. This Privacy Policy explains, in full, what information the App accesses, processes, or stores in every one of these contexts, and describes your rights and choices as a user.</p>
+      <div class="hero__meta">
+        <span class="pill pill--accent">Effective Date: August 15, 2026</span>
+        <span class="pill">Last Updated: August 15, 2026</span>
+        <span class="pill pill--good">No account required</span>
+        <span class="pill pill--good">No data leaves your device</span>
+        <span class="pill pill--violet">Accessibility &amp; screen-reader compatible</span>
+      </div>
+    </div>
+
+    <div class="layout">
+      <!-- ============================== TOC ============================== -->
+      <nav class="toc" aria-label="Table of contents">
+        <h2>On this page</h2>
+        <ol>
+          <li><a href="#s1">Introduction &amp; Scope</a></li>
+          <li><a href="#s2">Summary at a Glance</a></li>
+          <li><a href="#s3">Information We Collect</a></li>
+          <li><a href="#s4">How the App Works — TTS Engine Architecture</a></li>
+          <li><a href="#s5">Accessibility Services, Screen Readers &amp; TalkBack</a></li>
+          <li><a href="#s6">Local Storage &amp; Settings</a></li>
+          <li><a href="#s7">Permissions Requested</a></li>
+          <li><a href="#s8">Third-Party Services &amp; TTS Engines</a></li>
+          <li><a href="#s9">Data Sharing &amp; Disclosure</a></li>
+          <li><a href="#s10">Data Security</a></li>
+          <li><a href="#s11">Data Retention &amp; Deletion</a></li>
+          <li><a href="#s12">Children's Privacy</a></li>
+          <li><a href="#s13">Your Rights &amp; Choices</a></li>
+          <li><a href="#s14">International Users &amp; Legal Bases</a></li>
+          <li><a href="#s15">Do Not Track &amp; Advertising</a></li>
+          <li><a href="#s16">Automated Decision-Making</a></li>
+          <li><a href="#s17">Ownership &amp; Intellectual Property Rights</a></li>
+          <li><a href="#s18">Changes to This Policy</a></li>
+          <li><a href="#s19">Governing Law &amp; Jurisdiction</a></li>
+          <li><a href="#s20">Contact Us</a></li>
+        </ol>
+      </nav>
+
+      <!-- ============================== DOCUMENT ============================== -->
+      <article class="doc">
+
+        <section id="s1">
+          <h2><span class="num">01</span>Introduction &amp; Scope</h2>
+          <p>Code Galaxy Software Solutions ("<strong>we</strong>," "<strong>us</strong>," "<strong>our</strong>," or the "<strong>Developer</strong>") operates the Auto Lingual TTS Android application (the "<strong>App</strong>"). Auto Lingual TTS functions as an installable <strong>text-to-speech engine</strong> on the Android platform: it registers itself with the Android operating system so that it can be selected, by you or automatically by another application, as the engine that converts text into spoken audio.</p>
+          <p>In practice, this means the App is commonly used in one of two ways: (a) directly, when you provide or select text within the App itself; or (b) indirectly, as the configured voice engine for <strong>other applications and services</strong> — including e-book readers, PDF and document readers, news and article readers, messaging and notification-reading utilities, and <strong>accessibility services such as Google TalkBack, Select to Speak, Voice Access, and other third-party screen readers</strong> — which send text to the App through Android's standard text-to-speech framework for it to detect the language and synthesize into speech. Sections 4 and 5 of this Policy describe both scenarios in full technical and practical detail.</p>
+          <p>This Privacy Policy ("<strong>Policy</strong>") describes how the App handles information — including, most importantly, what it does <strong>not</strong> collect — regardless of which application or service invoked it, when you download, install, or use it. It applies to the App across all versions, updates, and distribution channels, including the Google Play Store and any other channel through which the App is made available.</p>
+          <p>By downloading, installing, accessing, or using Auto Lingual TTS — whether directly or as the selected TTS engine for another app or accessibility service — you acknowledge that you have read and understood this Policy and agree to its terms. If you do not agree with this Policy, please do not install or use the App, and uninstall it if already installed.</p>
+          <p class="small-note">This Policy is intended to be read together with the App's Terms of Use (if separately published) and any in-app disclosures. In the event of a conflict between this Policy and an in-app disclosure regarding a specific permission or feature, the more specific, contemporaneous in-app disclosure controls for that feature only. This is the final, published version of this Policy and supersedes any prior draft.</p>
+        </section>
+
+        <section id="s2">
+          <h2><span class="num">02</span>Summary at a Glance</h2>
+          <p class="small-note">This section is a plain-language summary for convenience only. It does not replace, limit, or override the detailed provisions set out in the rest of this Policy, which govern in the event of any inconsistency.</p>
+
+          <div class="callout callout--good">
+            <svg class="callout__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <p><strong>No accounts, no personal data collection.</strong> Auto Lingual TTS does not require registration, login, or any account. We do not collect names, email addresses, phone numbers, or government identifiers.</p>
+          </div>
+          <div class="callout callout--good">
+            <svg class="callout__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <p><strong>All processing happens on your device — no matter which app sent the text.</strong> Whether text comes from typing inside the App, an e-book reader, a PDF viewer, or an accessibility service like TalkBack, it is processed locally and routed directly to a TTS voice engine on your device. We do not operate servers that receive this content, and we cannot see it.</p>
+          </div>
+          <div class="callout callout--good">
+            <svg class="callout__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <p><strong>No advertising or analytics SDKs.</strong> The App does not integrate third-party advertising networks, analytics platforms, or automated crash-reporting tools such as Firebase Crashlytics, Google Analytics, or similar services.</p>
+          </div>
+          <div class="callout callout--info">
+            <svg class="callout__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 16v-4M12 8h.01M12 22c5.5-2 9-6 9-11V5l-9-3-9 3v6c0 5 3.5 9 9 11z"/></svg>
+            <p><strong>Settings stay on your device.</strong> Your preferences (language configuration, engine choice, Auto/Mixed mode) are stored locally using Android DataStore. If you export a backup, the exported file is encrypted on your device before it leaves the App's storage.</p>
+          </div>
+          <div class="callout callout--violet">
+            <svg class="callout__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <p><strong>Built to work with accessibility services.</strong> The App is designed to be selected as the system TTS engine used together with Google TalkBack and other screen readers. That configuration does not change our data practices — see Section 5 for the details that matter most to assistive-technology users.</p>
+          </div>
+          <div class="callout callout--warn">
+            <svg class="callout__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 9v4M12 17h.01M10.3 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L14.7 3.86a2 2 0 0 0-3.4 0z"/></svg>
+            <p><strong>Third-party TTS engines are separate.</strong> The App routes text to TTS engines you have installed (for example, Google Speech Services or Samsung TTS). Those engines are independent software governed by their own privacy policies, which we do not control. Please review Section 8 below.</p>
+          </div>
+        </section>
+
+        <section id="s3">
+          <h2><span class="num">03</span>Information We Collect</h2>
+
+          <h3>3.1 No Personal Data Collection</h3>
+          <p>We do <strong>not</strong> collect, store, transmit, sell, rent, trade, or otherwise process any personal information through the App. Specifically, we do not collect:</p>
+          <ul>
+            <li>Names, email addresses, mailing addresses, or phone numbers</li>
+            <li>Account credentials, passwords, or authentication tokens (the App does not use accounts)</li>
+            <li>Government-issued identifiers (passport numbers, national ID numbers, Aadhaar or other national identity numbers, etc.)</li>
+            <li>Financial or payment information (the App does not process payments)</li>
+            <li>Precise or approximate geolocation data</li>
+            <li>Contacts, call logs, SMS content, notification content, or photos, unless such content is separately and knowingly submitted as text — by you directly, by a host application such as an e-book reader, or by an accessibility service such as TalkBack — for the App to convert into speech, in which case it is processed exclusively as described in Sections 4 and 5</li>
+            <li>Biometric data of any kind, including voice-print or speaker-identification data</li>
+            <li>Advertising identifiers (such as the Google Advertising ID) for tracking or profiling purposes</li>
+          </ul>
+          <p>The App does not require you to create an account, sign in, or provide any registration information in order to use its core functionality, and no account is required by any host application in order for it to use the App as its TTS engine.</p>
+
+          <h3>3.2 Text and Voice Data — Regardless of Source</h3>
+          <p>The core function of the App is to detect the language of text — whatever its source — and route that text to an on-device text-to-speech engine for playback. This applies identically whether the text originates from your own input inside the App, from a third-party application that has selected the App as its TTS engine, or from an accessibility service reading your screen aloud. In every case:</p>
+          <ul>
+            <li>We do <strong>not</strong> automatically collect, log, store, or transmit the text supplied to the App, or the audio generated from it, to our servers or to any server operated by us.</li>
+            <li>We do not operate a backend server that receives, indexes, or retains text or audio processed by the App.</li>
+            <li>Text and language-detection processing occur entirely and exclusively on your device ("on-device" or "local" processing), regardless of which calling application supplied the text.</li>
+          </ul>
+
+          <h3>3.3 Crash Reports and Debugging Information</h3>
+          <p>We do not use automated crash-reporting or analytics tools that silently collect diagnostic data in the background. If the App crashes or malfunctions, we rely on <strong>manual, voluntary reporting</strong>: you may choose to contact the developer directly (see Section 20) and describe the issue, optionally including details such as your device model, Android version, or steps to reproduce the problem. Providing this information is entirely optional and is used solely to diagnose and fix the reported issue.</p>
+
+          <h3>3.4 Information We Never Access</h3>
+          <p>Consistent with the above, the App does not access your camera, microphone (for recording purposes), call logs, contacts list, browsing history, or files on your device except where a specific Android permission described in Section 7 is required for the App's core TTS-routing function, or where a host application or accessibility service you have configured passes text to the App through the standard Android TTS interface for the sole purpose of speech synthesis, and even then, only for that stated purpose.</p>
+        </section>
+
+        <section id="s4">
+          <h2><span class="num">04</span>How the App Works — TTS Engine Architecture</h2>
+          <p>To make this Policy fully transparent, this section describes, in plain terms, how Auto Lingual TTS technically operates as an Android text-to-speech engine, and how it interacts with the other applications that use it.</p>
+          <ol>
+            <li><strong>Registration as a system TTS engine.</strong> The App registers itself with the Android operating system as an available text-to-speech engine, the same way Google Speech Services or Samsung TTS does. You (or, in some cases, your device's default configuration) select Auto Lingual TTS as the active engine, either from within the App, or from Android's own <em>Settings → Accessibility → Text-to-speech output</em> menu.</li>
+            <li><strong>Input from any calling application.</strong> Once selected, any application on your device may send text to the App for speech synthesis through Android's standard <code>TextToSpeech</code> API. This includes text you type or select directly within the App, and text sent by third-party host applications — e-book and PDF readers, news readers, messaging apps, or accessibility services — as described further in Section 5.</li>
+            <li><strong>Local language detection.</strong> The App analyzes the received text on-device to determine its language, using logic that runs entirely within the App's own process on your phone. No portion of this analysis is transmitted anywhere.</li>
+            <li><strong>Local routing.</strong> Based on the detected language and your configured preferences (Auto or Mixed mode), the App selects and invokes an underlying text-to-speech voice engine already installed on your device (for example, Google Speech Services or Samsung TTS) through the Android operating system's standard text-to-speech API.</li>
+            <li><strong>Playback back to the calling application.</strong> The selected underlying engine synthesizes audio, which is returned through the standard Android TTS framework and played back through your device's speaker or connected audio output — to the same application that originally requested it. The App does not intercept, record, log, or retain a copy of this text or audio at any stage of this pipeline.</li>
+          </ol>
+          <div class="callout callout--info">
+            <svg class="callout__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 16v-4M12 8h.01M12 22c5.5-2 9-6 9-11V5l-9-3-9 3v6c0 5 3.5 9 9 11z"/></svg>
+            <p>At no point in this flow does text or audio leave your device through any channel operated or controlled by us — regardless of whether the request originated inside the App or from a third-party application using the App as its TTS engine. Whether the underlying TTS voice engine you have selected transmits data off-device is governed entirely by that engine's own privacy policy — see Section 8.</p>
+          </div>
+        </section>
+
+        <section id="s5">
+          <h2><span class="num">05</span>Accessibility Services, Screen Readers &amp; Google TalkBack</h2>
+          <p>Auto Lingual TTS is built and tested to work reliably as the selected voice engine for accessibility services and assistive technologies, including <strong>Google TalkBack</strong>, <strong>Select to Speak</strong>, <strong>Voice Access</strong>, and comparable third-party screen readers, as well as for e-book readers, PDF viewers, and similar reading applications. Because this is a primary, intended use case for the App, we want to be especially explicit about how it affects your privacy.</p>
+
+          <h3>5.1 What Changes When You Use an Accessibility Service or Reading App</h3>
+          <p>When TalkBack, another screen reader, or a reading application is configured to use Auto Lingual TTS, the text supplied to the App may include a much broader range of content than text you have chosen to type or select yourself — potentially including, depending entirely on how the host service or application is configured, screen contents, app and button labels, notification text, book or document contents, and other text that the accessibility service or reading app has chosen to read aloud.</p>
+
+          <h3>5.2 Our Processing Remains Identical, Regardless of Sensitivity or Source</h3>
+          <div class="callout callout--good">
+            <svg class="callout__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <p>We do not treat text arriving from an accessibility service or a host reading application any differently from text you type directly into the App. The exact same on-device-only pipeline described in Section 4 applies: the text is used transiently, on your device, solely to detect its language and forward it to a voice engine for synthesis. We do not log it, cache it beyond the immediate operation, profile you based on it, transmit it to our servers, or share it with any third party — regardless of how sensitive that text might be.</p>
+          </div>
+
+          <h3>5.3 What Is Outside Our Control</h3>
+          <p>Because Auto Lingual TTS operates as a system-level engine that any application can call, we have no visibility into, and no control over:</p>
+          <ul>
+            <li>Which specific text a host application or accessibility service chooses to send to the App for synthesis;</li>
+            <li>Whether that host application or accessibility service itself collects, logs, or transmits the underlying content elsewhere, independently of the App;</li>
+            <li>Any permissions, screen-reading capability, or data access that Android or the device manufacturer has separately granted to the accessibility service itself (for example, TalkBack's own accessibility-service permissions, which are governed by Google's own privacy policy, not this one).</li>
+          </ul>
+          <p>Responsibility for what content is read aloud, and for that host application's or accessibility service's own data practices, rests with that application or service and with your own device configuration — not with Auto Lingual TTS.</p>
+
+          <h3>5.4 A Note on Downstream Voice Engines</h3>
+          <p>If you (or your device's default configuration) have paired Auto Lingual TTS with an underlying voice engine that uses network/cloud-based voices rather than fully on-device voices (see Section 8), text read aloud through an accessibility service — which can include highly sensitive on-screen content — could be transmitted by that underlying engine according to its own, separate privacy policy. We encourage users who rely on screen readers, in particular, to review the privacy policy of their selected underlying voice engine and to prefer on-device voice packs where privacy is a priority.</p>
+
+          <h3>5.5 Our Commitment to Accessibility</h3>
+          <p>We are committed to keeping Auto Lingual TTS reliable and well-behaved for assistive-technology users, and we welcome feedback from users of TalkBack and other screen readers on both accessibility and privacy. You may reach us using the contact details in Section 20.</p>
+        </section>
+
+        <section id="s6">
+          <h2><span class="num">06</span>Local Storage &amp; Settings</h2>
+          <p>To provide a consistent experience between sessions, the App saves certain preferences locally on your device using Android's DataStore storage mechanism. This includes:</p>
+          <ul>
+            <li>Language configurations and language-to-voice mappings you have set</li>
+            <li>Your selected TTS engine(s) for each language</li>
+            <li>Your chosen operational mode (Auto or Mixed)</li>
+            <li>Other in-app preferences, such as speech rate, pitch, or interface settings, where applicable</li>
+          </ul>
+          <p>This information is stored exclusively in the App's private application storage on your device, in accordance with Android's application sandboxing model, and is not accessible to other apps, to us, or to any third party under normal operation.</p>
+
+          <h3>6.1 Settings Export &amp; Backup</h3>
+          <p>If you choose to export your settings (for example, to back them up or transfer them to another device), the exported file is <strong>encrypted on your device</strong> before it is written to storage or shared. We do not receive, store, or have any access to this exported file or its contents at any point. Safekeeping of any exported backup file — including where you choose to store or share it — is your responsibility.</p>
+
+          <h3>6.2 Uninstallation</h3>
+          <p>Uninstalling the App removes the App's private storage, including all locally saved settings, from your device, subject to standard Android OS behavior (for example, certain devices may retain app data temporarily if "keep app data" options are selected during uninstallation — this behavior is controlled by your device's operating system, not by us).</p>
+        </section>
+
+        <section id="s7">
+          <h2><span class="num">07</span>Permissions Requested</h2>
+          <p>To function reliably as a low-latency, always-ready text-to-speech engine — including when relied upon continuously by accessibility services and screen readers, where dropped or delayed speech can materially affect a user's ability to operate their device — the App requests the following Android device permissions. We request only what is necessary for the App's core functionality, consistent with Google Play's permissions policies.</p>
+
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr><th>Permission</th><th>Why the App requests it</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Wake Lock</td>
+                  <td>Prevents the device's processor from sleeping mid-operation, so that speech playback is not unexpectedly cut off while the App is actively converting text to speech — including during extended reading sessions initiated by e-book readers or screen readers.</td>
+                </tr>
+                <tr>
+                  <td>Ignore Battery Optimizations</td>
+                  <td>Requests exemption from aggressive battery-management restrictions that could otherwise suspend the App's background service, ensuring reliable, uninterrupted speech feedback when needed, including for users who depend on the App as their primary screen-reading voice engine.</td>
+                </tr>
+                <tr>
+                  <td>Receive Boot Completed</td>
+                  <td>Allows the App to reinitialize its background TTS-engine service automatically after your device restarts, so that TalkBack, other accessibility services, and reading applications can continue to use the App immediately, without requiring you to manually reopen it first.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <p>None of the permissions listed above are used to collect, transmit, or share personal data. Each permission is used solely to support the reliability of the App's on-device text-to-speech engine function, and for no other purpose, including advertising, analytics, or profiling.</p>
+          <p>You may review, and revoke, any of these permissions at any time — see Section 13 for instructions. Revoking a permission may reduce the reliability of certain features (for example, speech may pause more often, or the App may not restart automatically after a reboot, which may be especially noticeable if you rely on the App together with an accessibility service) but will not disable the App entirely, and will not affect any data privacy protections described in this Policy.</p>
+        </section>
+
+        <section id="s8">
+          <h2><span class="num">08</span>Third-Party Services &amp; TTS Engines</h2>
+          <p>The App is designed to work with underlying text-to-speech voice engines that are separately installed on your device by you, by your device manufacturer, or by the Android operating system — for example, Google Speech Services or Samsung TTS. These engines are independent, third-party software products that we do not develop, operate, or control.</p>
+          <ul>
+            <li>When the App routes text to a third-party TTS voice engine for playback, that engine processes the text according to its own, independently published privacy policy and terms.</li>
+            <li>Some third-party TTS engines may perform processing entirely on-device, while others (depending on the engine and its configuration, such as "network" voice packs) may transmit text to their own remote servers to synthesize higher-quality voices. Whether this occurs, and how any such data is handled, is determined entirely by the third-party engine you have selected — not by us.</li>
+            <li>We strongly encourage you to review the privacy policy of any TTS voice engine you configure within the App, particularly if you intend to use it — directly or via an accessibility service — to read sensitive or confidential text.</li>
+            <li>Similarly, where the App is used together with a host application (an e-book reader, a screen reader, or another accessibility service), that host application's own privacy policy governs its own separate handling of your data, independent of Auto Lingual TTS.</li>
+            <li>We are not responsible for, and expressly disclaim liability for, the data-handling practices of any third-party TTS engine, accessibility service, host application, operating system component, or other software installed on your device that the App may interact with.</li>
+          </ul>
+
+          <h4>Third-Party SDKs</h4>
+          <p>The App does <strong>not</strong> integrate any third-party software development kits (SDKs) for advertising, analytics, attribution, or crash reporting. No advertising network, analytics provider, or similar third party receives data from the App, because no such integration exists within the App.</p>
+        </section>
+
+        <section id="s9">
+          <h2><span class="num">09</span>Data Sharing &amp; Disclosure</h2>
+          <p>Because the App does not collect personal data, text content, or voice recordings in the first place, there is fundamentally nothing of that nature for us to share, sell, rent, trade, or otherwise disclose to any third party. For clarity and completeness, we confirm the following:</p>
+          <ul>
+            <li><strong>We do not sell personal data.</strong> We have not sold, and do not sell, personal information, as that term is defined under applicable law, to any third party.</li>
+            <li><strong>We do not share data with advertisers.</strong> The App contains no advertising integrations of any kind.</li>
+            <li><strong>We do not share data with data brokers or analytics companies.</strong> No such integrations exist within the App.</li>
+            <li><strong>Legal disclosure.</strong> In the hypothetical event that we were legally compelled by a valid court order, summons, or other lawful legal process to disclose information, we would only be able to disclose what we actually possess — which, given the App's architecture described in Sections 3–5, is limited to whatever voluntary correspondence you have sent us directly (for example, a support email), and does not include text or voice data processed by the App, since we never receive or store it, regardless of whether that data originated from you directly or from a host application or accessibility service.</li>
+            <li><strong>Business transfers.</strong> If Code Galaxy Software Solutions were to undergo a merger, acquisition, reorganization, or sale of assets, any limited information we do hold (such as voluntary support correspondence) might be transferred as part of that transaction, subject to standard confidentiality obligations and this Policy continuing to govern its use.</li>
+          </ul>
+        </section>
+
+        <section id="s10">
+          <h2><span class="num">10</span>Data Security</h2>
+          <p>Although the App's architecture is designed to minimize data collection at the source, we take the security of the limited information involved seriously:</p>
+          <ul>
+            <li><strong>On-device processing</strong> means text and voice data — whatever its source, including from accessibility services and reading applications — never traverse a network connection controlled by us, eliminating an entire category of transmission-related risk for that data.</li>
+            <li><strong>Local settings storage</strong> relies on Android's application sandboxing, which isolates the App's private data from other apps on your device under normal operating conditions.</li>
+            <li><strong>Exported backups</strong> are encrypted on-device before being written to a file, so that a backup file is not readable in plain text if accessed outside the App.</li>
+            <li><strong>Voluntary correspondence</strong> (such as a support email you choose to send us) is handled with reasonable administrative safeguards and access limited to personnel who need it to respond to your inquiry.</li>
+          </ul>
+          <p class="small-note">No method of storage or transmission is 100% secure, and while we and, where applicable, your device's operating system take reasonable steps to protect information, we cannot guarantee absolute security. Device-level security (such as using a secure lock screen and keeping your operating system updated) remains an important part of protecting locally stored data.</p>
+        </section>
+
+        <section id="s11">
+          <h2><span class="num">11</span>Data Retention &amp; Deletion</h2>
+          <ul>
+            <li><strong>Text and voice data (from any source, including accessibility services):</strong> Not retained by us at all, because it is never received by us. Any transient in-memory processing occurs locally on your device and is discarded immediately after the text is spoken.</li>
+            <li><strong>Local settings:</strong> Retained on your device only, for as long as the App remains installed, or until you clear the App's data or uninstall the App, whichever happens first.</li>
+            <li><strong>Exported backup files:</strong> Retained only for as long as you choose to keep the encrypted export file; we have no access to it and cannot delete it on your behalf.</li>
+            <li><strong>Voluntary support correspondence:</strong> Retained only as long as reasonably necessary to address your inquiry and for a limited period afterward for record-keeping, unless you request earlier deletion (see Section 13).</li>
+          </ul>
+        </section>
+
+        <section id="s12">
+          <h2><span class="num">12</span>Children's Privacy</h2>
+          <p>The App is not directed to children under the age of 13 (or the equivalent minimum age in your jurisdiction, such as 16 in certain territories under applicable data protection law, or 18 for consent purposes under India's Digital Personal Data Protection Act, 2023), and we do not knowingly collect personal information from children.</p>
+          <p>Because the App does not collect personal information from <strong>any</strong> user, regardless of age or the application through which the App is being used — as described throughout this Policy — this protection applies equally and automatically to users who are children, including where the App is used together with accessibility tools in an educational or assistive-learning context. We do not knowingly permit children to create accounts (as none exist), and we do not knowingly collect, use, or disclose personal information from children in a manner inconsistent with the Children's Online Privacy Protection Act ("COPPA"), India's Digital Personal Data Protection Act, 2023, or comparable international children's privacy laws.</p>
+          <p>If a parent or guardian believes that a child has provided us with personal information through voluntary correspondence (for example, a support email), please contact us using the details in Section 20, and we will take appropriate steps to delete such information promptly.</p>
+        </section>
+
+        <section id="s13">
+          <h2><span class="num">13</span>Your Rights &amp; Choices</h2>
+
+          <h3>13.1 Managing Permissions</h3>
+          <p>You can review and revoke any permission granted to the App at any time through your device settings, typically located at:</p>
+          <p><code>Settings → Apps → Auto Lingual TTS → Permissions</code></p>
+          <p>Revoking a given permission may limit the corresponding feature described in Section 7 (for example, reduced reliability of background operation or automatic restart after reboot), but will not affect any other App functionality and will not affect any of the privacy protections described elsewhere in this Policy.</p>
+
+          <h3>13.2 Clearing App Data</h3>
+          <p>You may clear the App's locally stored settings at any time via <code>Settings → Apps → Auto Lingual TTS → Storage → Clear Data</code>, or by uninstalling the App entirely. Doing so removes locally stored preferences from your device (see Section 6.2).</p>
+
+          <h3>13.3 Choosing Your TTS Engine and Host Applications</h3>
+          <p>You retain full control over which underlying third-party voice engine the App routes text to, and may change this at any time within the App's settings. You also retain full control, through Android's system settings, over which applications and accessibility services (including TalkBack) are permitted to use Auto Lingual TTS as their engine, and may change your default TTS engine or disable this configuration at any time via <code>Settings → Accessibility → Text-to-speech output</code>. If you have privacy concerns about a specific underlying voice engine, you may switch to a different, on-device-only engine, or decline to install network-based voice packs, subject to what is available on your device.</p>
+
+          <h3>13.4 Rights Under Applicable Privacy Laws</h3>
+          <p>Depending on your jurisdiction — for example, under India's Digital Personal Data Protection Act, 2023 ("<strong>DPDPA</strong>"), the EU/UK General Data Protection Regulation ("<strong>GDPR</strong>"), or the California Consumer Privacy Act as amended by the California Privacy Rights Act ("<strong>CCPA/CPRA</strong>") — you may have rights that include the right to access, correct, delete, or port personal data, the right to withdraw consent, the right to grievance redressal, and the right to nominate another individual to exercise these rights on your behalf in the event of death or incapacity (as recognized under the DPDPA). Because the App does not collect personal data about you in the first place, there is typically no personal data held by us for these rights to act upon; however, if you have sent us voluntary correspondence (Section 3.3), you may still exercise applicable rights over that specific correspondence by contacting us using the details in Section 20. We will respond to verifiable requests within the timeframe required by applicable law.</p>
+
+          <h3>13.5 Uninstallation</h3>
+          <p>You may uninstall the App at any time through standard Android uninstallation methods. Uninstallation removes the App and its locally stored data from your device, as described in Section 6.2.</p>
+        </section>
+
+        <section id="s14">
+          <h2><span class="num">14</span>International Users &amp; Legal Bases</h2>
+          <p>The App is made available to users in multiple countries and regions, including India and internationally. Because the App's architecture avoids collecting personal data by design ("privacy by design," and consistent with the data minimization principle under India's Digital Personal Data Protection Act, 2023), most cross-border data transfer concerns that apply to conventional apps do not arise in the same way — there is generally no personal data transmitted by the App across borders for us to process centrally.</p>
+          <p>To the limited extent we process any personal data at all (for example, voluntary support correspondence you send us by email), we do so on the following legal bases, as applicable under frameworks such as the DPDPA and the GDPR: <strong>consent</strong> (where you voluntarily contact us), <strong>legitimate uses/legitimate interests</strong> (in providing customer support and maintaining the security and functioning of our services), and <strong>compliance with legal obligations</strong> (where applicable law requires it).</p>
+          <p>If you are located in India, the European Economic Area, the United Kingdom, Switzerland, California, or another jurisdiction with specific data protection requirements, and you believe those requirements apply to any processing we carry out, please contact us using the details in Section 20 so that we can assist you.</p>
+        </section>
+
+        <section id="s15">
+          <h2><span class="num">15</span>Do Not Track &amp; Advertising</h2>
+          <p>Because the App does not use tracking technologies, advertising SDKs, or cross-app/cross-site tracking of any kind, "Do Not Track" browser or platform signals are not applicable to the App, and we do not serve targeted, personalized, or behavioral advertising within the App. The App also does not access or use your device's advertising identifier (such as the Google Advertising ID / GAID) for any purpose.</p>
+        </section>
+
+        <section id="s16">
+          <h2><span class="num">16</span>Automated Decision-Making &amp; Profiling</h2>
+          <p>The App does not engage in automated decision-making, profiling, or algorithmic scoring that produces legal effects or similarly significant effects concerning you. The App's on-device language-detection logic exists solely to select an appropriate voice/engine for playback and does not build a profile of you, your behavior, your reading habits, or your content — including where the App is used extensively together with an e-book reader or an accessibility service over time.</p>
+        </section>
+
+        <section id="s17">
+          <h2><span class="num">17</span>Ownership &amp; Intellectual Property Rights <span class="hi">(स्वामित्व एवं बौद्धिक संपदा अधिकार)</span></h2>
+
+          <h3>17.1 Ownership</h3>
+          <p>The App — including its source code, object code, underlying architecture, software design, user interface, visual design, icons, logos, the name "Auto Lingual TTS," and all associated documentation — is the exclusive property of Code Galaxy Software Solutions, and is protected under the copyright, trademark, and other intellectual property laws of India (including the Copyright Act, 1957, and the Trade Marks Act, 1999) and, to the extent applicable, corresponding international treaties and laws of general application. No provision of this Policy shall be construed as transferring or assigning any ownership or intellectual property right in the App to you or to any third party.</p>
+
+          <div class="rights-block">
+            <strong>सर्वाधिकार सुरक्षित — All Rights Reserved.</strong> Code Galaxy Software Solutions retains all right, title, and interest in and to the App, including all intellectual property rights therein, worldwide. Unauthorized reproduction, distribution, reverse engineering, decompilation, modification, or creation of derivative works based on the App, in whole or in part, is strictly prohibited except to the limited extent expressly permitted by applicable law notwithstanding this restriction, or with our prior written consent.
+          </div>
+
+          <h3>17.2 License to Use, Not Ownership</h3>
+          <p>Subject to your compliance with this Policy, the App's Terms of Use (if separately published), and the applicable Google Play terms, we grant you a limited, non-exclusive, non-transferable, non-sublicensable, and revocable license to download and use the App on devices you own or control, for your personal, non-commercial use, or for legitimate assistive/accessibility purposes. The App is licensed to you, not sold. This license does not include any right to resell, rent, lease, sublicense, distribute commercially, publicly perform, or create derivative works from the App.</p>
+
+          <h3>17.3 Third-Party Trademarks &amp; Interoperability</h3>
+          <p>References in this Policy and within the App to third-party names, products, and services — including "Google," "Google TalkBack," "Google Speech Services," "Samsung," and "Samsung TTS" — are the trademarks or registered trademarks of their respective owners, are used solely for descriptive purposes to accurately explain the App's interoperability with those services, and do not imply any sponsorship, endorsement, affiliation, or partnership between Code Galaxy Software Solutions and those trademark owners, unless separately and expressly stated.</p>
+
+          <h3>17.4 Your Content Remains Yours</h3>
+          <p>Where the App processes text you provide, or that a host application or accessibility service supplies to it, for the sole purpose of speech synthesis, we claim no ownership interest whatsoever in that text or content. As described throughout this Policy, such content is processed transiently and locally on your device and is neither retained nor claimed by us in any form.</p>
+
+          <h3>17.5 Feedback</h3>
+          <p>If you voluntarily submit suggestions, ideas, or feedback about the App to us (for example, via the contact details in Section 20), you grant us a non-exclusive, perpetual, royalty-free, worldwide license to use that feedback to improve the App, without any obligation to compensate you, unless otherwise agreed in writing.</p>
+        </section>
+
+        <section id="s18">
+          <h2><span class="num">18</span>Changes to This Policy</h2>
+          <p>We may update this Privacy Policy from time to time to reflect changes in the App's functionality, legal or regulatory requirements, or our practices. When we do, we will revise the "Last Updated" date at the top of this Policy and, where the changes are material, we will take additional reasonable steps to bring the update to your attention — for example, through an in-app notice, a Google Play listing update, or another equally effective means, where practicable.</p>
+          <p>Your continued installation or use of Auto Lingual TTS after an updated Policy takes effect — including continued use of the App as your configured TTS engine for a host application or accessibility service — constitutes your acceptance of the revised terms. If you do not agree with a revised Policy, you should stop using the App and uninstall it. We encourage you to review this Policy periodically to stay informed of how the App handles information.</p>
+        </section>
+
+        <section id="s19">
+          <h2><span class="num">19</span>Governing Law &amp; Jurisdiction <span class="hi">(शासकीय कानून एवं क्षेत्राधिकार)</span></h2>
+
+          <h3>19.1 Governing Law</h3>
+          <p>This Policy, the App, and any dispute, claim, or controversy arising out of or relating to either of them, shall be governed by and construed in accordance with the laws of India, without regard to its conflict-of-law principles. This includes, without limitation and to the extent applicable:</p>
+          <ul>
+            <li>The <strong>Information Technology Act, 2000</strong>, and the rules made thereunder, including the Information Technology (Reasonable Security Practices and Procedures and Sensitive Personal Data or Information) Rules, 2011;</li>
+            <li>The <strong>Digital Personal Data Protection Act, 2023</strong> ("DPDPA"), governing the processing of digital personal data in India;</li>
+            <li>The <strong>Bharatiya Nyaya Sanhita, 2023</strong> ("BNS"), the <strong>Bharatiya Nagarik Suraksha Sanhita, 2023</strong> ("BNSS"), and the <strong>Bharatiya Sakshya Adhiniyam, 2023</strong> ("BSA"), to the extent applicable to any unlawful access, misuse, or criminal conduct connected with the App;</li>
+            <li>The <strong>Copyright Act, 1957</strong>, and the <strong>Trade Marks Act, 1999</strong>, governing the ownership and protection described in Section 17;</li>
+            <li>The <strong>Consumer Protection Act, 2019</strong>, to the extent applicable to your use of the App as a consumer.</li>
+          </ul>
+          <p>Where the App is used outside India, we additionally intend for our practices, as described in this Policy, to be consistent with applicable data protection and consumer laws of general application in your jurisdiction — including, without limitation, the GDPR, the CCPA/CPRA, and COPPA — to the extent those laws apply to the App's operations, and mandatory local law will apply to the extent it cannot be excluded by agreement.</p>
+
+          <h3>19.2 Jurisdiction &amp; Dispute Resolution</h3>
+          <p>Subject to any mandatory consumer-protection law that grants you the right to bring proceedings in your own place of residence, you agree that any dispute arising out of or in connection with this Policy or the App shall be subject to the exclusive jurisdiction of the competent courts located in India, and both parties consent to the personal jurisdiction of such courts for this purpose.</p>
+
+          <h3>19.3 Compliance with Google Play Policies</h3>
+          <p>This App and this Policy are additionally designed to comply with the <strong>Google Play Developer Program Policies</strong>, including the User Data policy, the Permissions policy, the Accessibility-related guidance applicable to apps that register as text-to-speech engines, and the Families policy (to the extent applicable).</p>
+        </section>
+
+        <section id="s20">
+          <h2><span class="num">20</span>Contact Us</h2>
+          <p>If you have any questions, concerns, or requests regarding this Privacy Policy, our privacy practices, or the App generally — including its use with e-book readers, screen readers, or accessibility services such as TalkBack, or requests relating to your rights described in Section 13 — please contact us using the details below. We aim to respond to legitimate inquiries within a reasonable time, and in any event within any timeframe required by applicable law, including the grievance-redressal timelines prescribed under Indian law where applicable.</p>
+          <div class="contact-card">
+            <dl>
+              <dt>Developer</dt>
+              <dd>Code Galaxy Software Solutions</dd>
+              <dt>Application</dt>
+              <dd>Auto Lingual TTS (Android — Text-to-Speech Engine)</dd>
+              <dt>Email</dt>
+              <dd><a href="mailto:jaskaransingh842722@gmail.com">jaskaransingh842722@gmail.com</a></dd>
+            </dl>
+          </div>
+          <p class="small-note" style="margin-top:18px">This is the final, published Privacy Policy for Auto Lingual TTS, effective and last updated on August 15, 2026. It applies to the current published version of the App on the Google Play Store and any other authorized distribution channel, and to all use of the App, whether directly or as a configured text-to-speech engine for a third-party application or accessibility service.</p>
+        </section>
+
+      </article>
+    </div>
+  </div>
+
+  <div class="doc-footer">
+    &copy; <span id="year">2026</span> Code Galaxy Software Solutions. All Rights Reserved.<br>
+    <span class="hindi">सर्वाधिकार सुरक्षित — कोड गैलेक्सी सॉफ्टवेयर सॉल्यूशंस।</span><br>
+    This is the final published Privacy Policy for the Auto Lingual TTS application.
+  </div>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
